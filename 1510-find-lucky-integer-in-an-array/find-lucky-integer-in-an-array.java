@@ -9,9 +9,9 @@ class Solution {
         int max = -1;
         for(Map.Entry<Integer, Integer> e : freq.entrySet())
         {
-           if(e.getKey().equals(e.getValue()))
+           if(e.getKey() > max && e.getKey().equals(e.getValue()))
            {
-                max = Math.max(max, e.getKey());
+                max = e.getKey();
            }
         }
         return max;
