@@ -2,7 +2,6 @@ class Solution {
     public int maxPower(String s) {
         int count = 1;
         int max = Integer.MIN_VALUE;
-        s = s.trim();
         s = s + " ";
         for(int i=0;i<s.length() - 1;i++)
         {
