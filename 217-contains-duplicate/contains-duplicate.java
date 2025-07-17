@@ -1,15 +1,17 @@
+import java.util.Arrays;
+
 class Solution {
     public boolean containsDuplicate(int[] nums) {
-        HashMap<Integer, Integer> freq = new HashMap<> ();
-        for(int num : nums)
-        {
-            freq.put(num, freq.getOrDefault(num, 0) + 1);
+        // Sort the array first
+        Arrays.sort(nums);
+        
+        // Check for adjacent duplicates
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] == nums[i - 1]) {
+                return true; // Duplicate found
+            }
         }
-        for(int num : freq.keySet())
-        {
-            if(freq.get(num) != 1)
-                return true;
-        }
-        return false;
+        
+        return false; // No duplicates
     }
 }
