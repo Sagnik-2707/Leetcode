@@ -7,7 +7,7 @@ class Solution {
         {
             result <<= 1;
             result |= (n & 1);
-            n >>= 1;
+            n >>>= 1;
         }
         return result;
     }
